@@ -7,8 +7,8 @@ import (
 	gc "gopkg.in/check.v1"
 
 	cmdtesting "github.com/juju/juju/cmd/testing"
-	"github.com/juju/juju/juju/testing"
 	coretesting "github.com/juju/juju/testing"
+	"github.com/juju/testing"
 )
 
 func badrun(c *gc.C, exit int, args ...string) string {
@@ -17,7 +17,7 @@ func badrun(c *gc.C, exit int, args ...string) string {
 }
 
 type CmdSuite struct {
-	testing.JujuConnSuite
+	testing.IsolationSuite
 }
 
 var _ = gc.Suite(&CmdSuite{})
